@@ -17,8 +17,10 @@
     <button type="submit">Generate QR Code</button>
   </form>
   {% if data %}
-  <div class="qrcode">
-    <img src="{{data}}" alt="" />
+  <div class="frame">
+    <div class="qrcode">
+      <img src="{{data}}" alt="" />
+    </div>
   </div>
   {% endif %}
 </body>
@@ -33,20 +35,25 @@
     align-items: center;
   }
 
-  .qrcode {
+  .frame {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 20px auto;
+    max-width: fit-content;
   }
 
-  form button {
-    display: flex;
+  .qrcode {
+    border: 8px solid grey;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: white;
   }
 
-  form input {
-    padding: 0.5rem 1rem;
-    width: 30%;
+  .qrcode img {
+    display: block;
+    width: 300px;
+    height: 300px;
   }
 
   form {
@@ -54,5 +61,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  form input {
+    padding: 0.5rem 1rem;
+    width: 30%;
+  }
+
+  form button {
+    display: flex;
   }
 </style>
