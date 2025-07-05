@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator</title>
+</head>
+
+<body>
+  <div class="link">
+    <h1>QR Code Generator</h1>
+    <h2>Insert link</h2>
+  </div>
+  <form action="/" method="POST">
+    <input type="text" name="link">
+    <button type="submit">Generate QR Code</button>
+  </form>
+  {% if data %}
+  <div class="qrcode">
+    <img src="{{data}}" alt="" />
+  </div>
+  {% endif %}
+</body>
+
+</html>
+
+<style>
+  .link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .qrcode {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  form button {
+    display: flex;
+  }
+
+  form input {
+    padding: 0.5rem 1rem;
+    width: 30%;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
